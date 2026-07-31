@@ -1,39 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Electricity Management</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// Smart Electricity Management System
 
-    <header>
-        <h1>⚡ Smart Electricity Management System</h1>
-    </header>
+// Sample electricity data
+let units = 120;
+let ratePerUnit = 8; // ₹8 per unit
 
-    <div class="container">
+// Display values when page loads
+window.onload = function () {
+    updateDashboard();
+};
 
-        <div class="card">
-            <h2>Today's Usage</h2>
-            <p id="usage">12.5 kWh</p>
-        </div>
+// Update dashboard values
+function updateDashboard() {
+    document.getElementById("units").innerHTML = units + " kWh";
+    document.getElementById("bill").innerHTML = "₹ " + (units * ratePerUnit);
 
-        <div class="card">
-            <h2>Estimated Bill</h2>
-            <p id="bill">₹250</p>
-        </div>
+    if (units > 150) {
+        document.getElementById("alert").innerHTML =
+            "⚠ High Electricity Usage!";
+        document.getElementById("alert").style.color = "red";
+    } else {
+        document.getElementById("alert").innerHTML =
+            "✅ Electricity Usage is Normal";
+        document.getElementById("alert").style.color = "green";
+    }
+}
 
-        <div class="card">
-            <h2>Power Status</h2>
-            <p id="status">Normal ✅</p>
-        </div>
+// Add 10 units
+function addUsage() {
+    units += 10;
+    updateDashboard();
+}
 
-        <button onclick="showAlert()">Check Alert</button>
-
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+// Reset usage
+function resetUsage() {
+    units = 0;
+    updateDashboard();
+}
