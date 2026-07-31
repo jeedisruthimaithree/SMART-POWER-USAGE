@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Electricity Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>⚡ Smart Electricity Management System</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Today's Usage</h2>
+            <p id="usage">12.5 kWh</p>
+        </div>
+
+        <div class="card">
+            <h2>Estimated Bill</h2>
+            <p id="bill">₹250</p>
+        </div>
+
+        <div class="card">
+            <h2>Power Status</h2>
+            <p id="status">Normal ✅</p>
+        </div>
+
+        <button onclick="showAlert()">Check Alert</button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
